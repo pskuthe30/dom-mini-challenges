@@ -45,3 +45,38 @@ makeMoney.addEventListener("submit", (event) => {
     console.log(i);
   }
 });
+let lightBulb = document.querySelector(".light-blub");
+let on = document.querySelector(".on");
+let off = document.querySelector(".off");
+let toggle = document.querySelector(".toggle");
+let end = document.querySelector(".end");
+
+on.addEventListener("click", () => {
+  // lightBulb.style.backgroundColor = "lightgray";
+  lightBulb.remove.classList("offClick");
+  lightBulb.classList.add("onClick");
+});
+
+off.addEventListener("click", () => {
+  //lightBulb.style.backgroundColor = "grey";
+  lightBulb.remove.classList("onClick");
+  lightBulb.classList.add("offClick");
+});
+
+toggle.addEventListener("toggle", () => {
+  if (lightBulb.classList.contains("onClick")) {
+    lightBulb.remove.classList("onClick");
+    lightBulb.classList.add("offClick");
+  } else {
+    lightBulb.remove.classList("offClick");
+    lightBulb.classList.add("onClick");
+  }
+});
+
+end.addEventListener("click", () => {
+  lightBulb.remove();
+  on.classList.add("disabledButton");
+  off.classList.add("disabledButton");
+  toggle.classList.add("disabledButton");
+  end.classList.add("disabledButton");
+});
